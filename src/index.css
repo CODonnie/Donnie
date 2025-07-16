@@ -1,68 +1,82 @@
-:root {
-  font-family: system-ui, Avenir, Helvetica, Arial, sans-serif;
-  line-height: 1.5;
-  font-weight: 400;
+@import url('https://fonts.googleapis.com/css2?family=Ubuntu+Condensed&family=Ubuntu+Sans:ital,wght@0,100..800;1,100..800&display=swap');
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
+@import "tailwindcss";
 
-  font-synthesis: none;
-  text-rendering: optimizeLegibility;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@theme {
+    --color-primary: hsl(var(--primary));
+    --primary-foreground: hsl(var(--primary-foreground));
+    --color-accent: hsl(var(--accent));
+    --color-muted: hsl(var(--muted));
+    --color-foreground: hsl(var(--foreground));
+    --color-background: hsl(var(--background));
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
+@layer base {
+    :root {
+        --background: 208 0% 92%;
+        --foreground: 180 100% 3%;
+        --primary: 180 100% 90%;
+        --primary-foreground: 180 100% 14%;
+        --accent: 180 100% 46%;
+        --muted: 0 0% 67%;
+    }
+
+    .dark {
+        --background: 180 100% 3%;
+        --foreground: 208 0% 92%;
+        --primary: 180 100% 90%;
+        --primary-foreground: 180 100% 14%;
+        --accent: 180 100% 46%;
+        --muted: 0 0% 67%;
+    }
+
+    p {
+        font-family: 'Ubuntu Sans', sans-serif;
+        @apply text-base sm:text-lg md:text-xl font-normal;
+    }
+
+    h1 {
+        font-family: 'Ubuntu Sans', sans-serif;
+        @apply text-3xl sm:text-4xl md:text-5xl font-bold leading-tight tracking-tight;
+    }
+
+    h2 {
+        font-family: 'Ubuntu Sans', sans-serif;
+        @apply text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug tracking-tight;
+    }
+
+    h3 {
+        font-family: 'Ubuntu Sans', sans-serif;
+        @apply text-xl sm:text-2xl md:text-3xl font-semibold leading-normal;
+    }
+
+    *,
+    ::before,
+    ::after {
+        @apply box-border;
+        font-family: 'Ubuntu Sans', sans-serif;
+    }
+
+    html {
+        @apply text-[hsl(var(--foreground))] bg-[hsl(var(--background))];
+        @apply scroll-smooth;
+    }
+
+    body {
+        font-family: 'Ubuntu Sans', sans-serif;
+        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+    }
 }
 
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
+#root {
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0;
+}
+@utility btn {
+  @apply px-4 py-2 rounded-lg font-medium bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] transition;
 }
 
-h1 {
-  font-size: 3.2em;
-  line-height: 1.1;
-}
-
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:hover {
-  border-color: #646cff;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
-}
-
-@media (prefers-color-scheme: light) {
-  :root {
-    color: #213547;
-    background-color: #ffffff;
-  }
-  a:hover {
-    color: #747bff;
-  }
-  button {
-    background-color: #f9f9f9;
-  }
+@utility link {
+  @apply text-[hsl(var(--accent))] hover:underline;
 }
