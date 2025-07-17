@@ -7,7 +7,7 @@ const Navbar = () => {
     <div>
       <div className='flex justify-between items-center p-4 fixed top-0 left-0 right-0'>
         <img src={assets.codlogo2} alt="COD_logo.png" className="w-20 h-20" />
-        <AlignRight className="w-12 h-12" />
+        <AlignRight className="w-8 h-8" />
       </div>
     </div>
   )

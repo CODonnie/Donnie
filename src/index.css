@@ -31,13 +31,10 @@
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1); /* small bounce */
   }
 
-  80% {
-    transform: translateY(-5%);
-    animation-timing-function: ease-out;
-  }
-
   100% {
     transform: translateY(0);
+    animation-timing-function: ease-out;
+
     opacity: 1;
   }
 }
