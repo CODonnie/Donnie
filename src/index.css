@@ -9,6 +9,41 @@
     --color-muted: hsl(var(--muted));
     --color-foreground: hsl(var(--foreground));
     --color-background: hsl(var(--background));
+    --animate-bounceTwice: bounceTwice 0.5s ease-in-out 2;
+    --animate-slideout: slideout 0.3s ease-in-out;
+}
+
+@keyframes bounceTwice {
+  0% {
+    transform: translateY(-100);
+    animation-timing-function: cubic-bezier(1, 0, 1, 1);
+  }
+  25% {
+    transform: translateY(0px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  50% {
+    transform: translateY(-15px);
+    animation-timing-function: cubic-bezier(0.8, 0, 1, 1);
+  }
+  75% {
+    transform: translateY(-5px);
+    animation-timing-function: cubic-bezier(0, 0, 0.2, 1);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
+
+ @keyframes slideout {
+    from {
+        transform: translateX(0);
+        opacity: 1;
+    }
+    to {
+        transform: translateX(-100%);
+        opacity: 0;
+ }
 }
 
 @layer base {
@@ -41,7 +76,7 @@
     }
 
     h2 {
-        font-family: 'Ubuntu Sans', sans-serif;
+        font-family: 'Ubuntu Condensed', sans-serif;
         @apply text-2xl sm:text-3xl md:text-4xl font-semibold leading-snug tracking-tight;
     }
 
@@ -79,4 +114,10 @@
 
 @utility link {
   @apply text-[hsl(var(--accent))] hover:underline;
+}
+
+@utility condensed {
+    fontfamily: 'Ubuntu Condensed', sans-serif;
+    font-weight: 500;
+    @apply tracking-tighter
 }
