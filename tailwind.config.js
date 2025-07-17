@@ -2,7 +2,7 @@
 export default {
   content: [
     "./index.html",
-    "./src/**/*.{js,jsx,ts,tsx}", // adjust as needed
+    "./src/**/*.{js,jsx,ts,tsx}",
   ],
   theme: {
     extend: {
@@ -17,5 +17,5 @@ export default {
     },
   },
   plugins: [],
-  darkMode: "class", // enables `.dark` class-based dark mode
+  darkMode: "class",
 };

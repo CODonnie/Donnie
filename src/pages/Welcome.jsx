@@ -16,9 +16,10 @@ const Welcome = () => {
   }, [project]);
   return (
     <div className="">
-      <div className='fixed top-[80%] left-[7%] flex flex-col items-center justify-end gap-0 h-[100px] cursor-pointer'>
-        <p className='condensed text-2xl italic absolute top-0 left-0 text-muted'>Get to</p>
-        <p className='condensed text-2xl absolute top-6.5 left-0 text-muted'>know</p>
+      <div className='fixed top-[80%] left-[7%] flex flex-col items-center justify-end gap-0 h-[120px] cursor-pointer'>
+        <div className='absolute top-3 bg-foreground rounded-full w-4 h-4 animate-bounceInfinite'></div>
+        <p className='condensed text-2xl italic absolute top-6.5 left-0 text-muted'>Get to</p>
+        <p className='condensed text-2xl absolute top-12 left-0 text-muted'>know</p>
         <p className='text-5xl font-bold'>ME</p>
       </div>
       {/* Navbar */}
@@ -27,7 +28,7 @@ const Welcome = () => {
         {project.map((items, index) => (
           <div key={index} className="flex flex-col items-end mx-4 group">
             <div className='flex items-center justify-end'>
-              <p className='font-semibold text-muted opacity-0 group-hover:opacity-100 group-hover:animate-slideout transition-all duration-300'>{items.info}</p>
+              <p className='font-normal pr-2 text-muted opacity-0 group-hover:opacity-100 group-hover:animate-slideout transition-all duration-300'>{items.info}</p>
               {visibleIndexes.includes(index) && (
                 <h2
                   className="text-[5rem] cursor-pointer font-extrabold leading-tight italic animate-bounceTwice transition-all"
