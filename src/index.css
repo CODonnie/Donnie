@@ -10,10 +10,12 @@
     --color-foreground: hsl(var(--foreground));
     --color-background: hsl(var(--background));
     --animate-bounceTwice: bounceTwice 1s ease-in-out;
-    --animate-bounceInfinite: bounceInfinite 1s infinite;
+    --animate-bounceInfinite: bounceInfinite .5s infinite alternate;
     --animate-slideout: slideout 0.3s ease-in-out;
     --animate-div-cover: div-cover .5s linear;
 		--animate-div-remove: div-remove .5s linear;
+    --animate-goLeft: goLeft 1s ease-in-out forwards;
+    --animate-goRight: goRight 1s ease-in-out forwards;
 }
 
 @keyframes div-cover {
@@ -36,6 +38,15 @@
 		width: 100%;
 		clip-path: circle(7% at left top);
 	}
+}
+
+@keyframes goLeft {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(-100px); opacity: 0; }
+}
+@keyframes goRight {
+  0% { transform: translateX(0); opacity: 1; }
+  100% { transform: translateX(100px); opacity: 0; }
 }
 
 @keyframes bounceTwice {
@@ -67,13 +78,9 @@
     transform: translateY(-100px);
     animation-timing-function: cubic-bezier(0.8, 0, 1, 1); /* fall */
   }
-  50% {
+  100% {
     transform: translateY(0px);
     animation-timing-function: cubic-bezier(0, 0, 0.2, 1); /* up */
-  }
-  100% {
-    transform: translateY(-100px);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1); /* fall */
   }
 }
 
@@ -164,4 +171,12 @@
     fontfamily: 'Ubuntu Condensed', sans-serif;
     font-weight: 500;
     @apply tracking-tighter
+}
+@utility buttonRound {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  left: 1px;
+  margin: 0 auto;
+  background-color: hsl(var(--foreground));
 }
