@@ -1,7 +1,4 @@
-import codLogo1 from "./COD-01.png";
-import codlogo2 from "./COD_logo_2.png";
-import codround from "./COD_2.png";
-import dee1 from "./dee1.png";
+import cod25 from "./cod25.svg";
 import illustrator from "./png/adobeAI.png";
 import xd from "./png/adobeXD.png";
 import canva from "./png/canva.png";
@@ -39,13 +36,11 @@ import xb from "./contactIcon/X-black.png";
 import linkedinb from "./contactIcon/linkedin-black.png";
 import whatsappb from "./contactIcon/whatsapp-black.png";
 import githubb from "./contactIcon/github-black.png";
+import landscape from "./landscape.svg"
 
 
 export const assets = {
-  codLogo1,
-  codlogo2,
-  codround,
-  dee1,
+  cod25,
   illustrator,
   xd,
   canva,
@@ -69,6 +64,7 @@ export const assets = {
   sass,
   tailwindcss,
   typescript,
+  landscape,
 };
 
 export const lightAssets = [
@@ -278,3 +274,81 @@ export const project = [
     endDate: "05/2024",
   },
 ];
+
+export const shortProject = [
+   {
+    id: "1",
+    title: "Streamline",
+    type: "development",
+    subType: "front-end",
+    description:
+      "A full-featured streaming web app with user authentication, category-based filtering, and responsive layout.",
+    info: "netflix-clone",
+    stack: ["React", "Firebase", "TMDB API", "Tailwind CSS"],
+    thumbnail: oslo,
+    image: [lascaux, osloO, oslo, shangai],
+    liveUrl: "https://netflix-clone.vercel.app",
+    repoUrl: "https://github.com/CODonnie/netflix-clone",
+    tags: ["frontend", "auth", "api"],
+    isFeatured: true,
+    status: "completed",
+    startDate: "01/2025",
+    endDate: "02/2025",
+  },
+  {
+    id: "2",
+    title: "Jabb",
+    type: "development",
+    subType: "backend",
+    description:
+      "A job board API featuring RBAC, tag filtering, and full CRUD functionality for jobs.",
+    info: "job-api",
+    stack: ["TypeScript", "Express", "MongoDB", "JWT"],
+    thumbnail: oslo,
+    image: [lascaux, osloO, oslo, shangai],
+    liveUrl: "",
+    repoUrl: "https://github.com/CODonnie/jabb-api",
+    tags: ["backend", "RBAC", "API"],
+    isFeatured: false,
+    status: "completed",
+    startDate: "11/2024",
+    endDate: "01/2025",
+  },
+  {
+    id: "3",
+    title: "Elevate",
+    type: "design",
+    subType: "graphics design",
+    description: "",
+    info: "sme-flyer",
+    stack: ["Photoshop", "Illustrator"],
+    thumbnail: oslo,
+    image: [lascaux, osloO, oslo, shangai],
+    liveUrl: "",
+    repoUrl: "",
+    tags: ["flyer", "branding"],
+    isFeatured: true,
+    status: "completed",
+    startDate: "08/2024",
+    endDate: "08/2024",
+  },
+  {
+    id: "4",
+    title: "Transferly",
+    type: "development",
+    subType: "backend",
+    description:
+      "A file-sharing API with link generation, expiration, file versioning, and analytics tracking.",
+    info: "wetransfer-clone",
+    stack: ["Express", "TypeScript", "MongoDB"],
+    thumbnail: oslo,
+    image: [lascaux, osloO, oslo, shangai],
+    liveUrl: "",
+    repoUrl: "https://github.com/CODonnie/wetransfer-api",
+    tags: ["backend", "file-sharing", "REST"],
+    isFeatured: true,
+    status: "in-progress",
+    startDate: "06/2025",
+    endDate: "nil",
+  },
+]
