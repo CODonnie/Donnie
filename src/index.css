@@ -95,15 +95,17 @@
         --primary: 180 100% 90%;
         --primary-foreground: 180 100% 14%;
         --accent: 180 100% 46%;
+        --sunAccent: 180 40% 30%;
         --muted: 180 10% 50%;
     }
 
-    :root {
+    .dark {
         --background: 180 100% 3%;
         --foreground: 208 0% 92%;
         --primary: 180 100% 90%;
         --primary-foreground: 180 100% 14%;
         --accent: 180 100% 46%;
+        --sunAccent: 180 40% 30%;
         --muted: 180 10% 50%;
     }
 
