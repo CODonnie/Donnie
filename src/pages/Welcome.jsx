@@ -33,9 +33,9 @@ const Welcome = () => {
       {/* more project button */}
       <div 
         onClick={() => setMoreProject(!moreProject)}
-        className="h-7 w-27 fixed bottom-45 right-10 flex items-center justify-end group cusor-pointer">
+        className={`"h-7 w-27 fixed bottom-45 right-10 flex items-center justify-end group cusor-pointer" ${moreProject ? "" : ""}`}>
         <div className={`bg-foreground absolute w-25 h-7 rounded-sm transition-all duration-300 group-hover:buttonRound ${moreProject ? "animate-goLeft" : ""}`}></div>
-        <p className={`'font-semibold text-1rem text-background z-1 mr-2.5 group-hover:text-foreground group-hover:cursor-pointer cursor-pointer' ${moreProject ? "animate-goRight" : ""}`}>View More</p>
+        <p className={`font-semibold text-1rem text-background z-1 mr-2.5 group-hover:text-foreground group-hover:cursor-pointer cursor-pointer ${moreProject ? "animate-goRight" : ""}`}>View More</p>
       </div>
 
       <div className="h-25 w-screen fixed bottom-0 bg-background z-10"></div>
