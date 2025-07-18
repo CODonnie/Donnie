@@ -351,4 +351,23 @@ export const shortProject = [
     startDate: "06/2025",
     endDate: "nil",
   },
+  {
+    id: "5",
+    title: "Flexfolio",
+    type: "development",
+    subType: "full-stack",
+    description:
+      "A dynamic portfolio site with CMS-like dashboard to manage projects and update content live.",
+    info: "portfolio-cms",
+    stack: ["React", "Node.js", "MongoDB", "Tailwind CSS"],
+    thumbnail: oslo,
+    image: [lascaux, osloO, oslo, shangai],
+    liveUrl: "",
+    repoUrl: "",
+    tags: ["full-stack", "portfolio"],
+    isFeatured: true,
+    status: "in-progress",
+    startDate: "07/2025",
+    endDate: "nil",
+  },
 ]

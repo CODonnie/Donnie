@@ -98,7 +98,7 @@
         --muted: 180 10% 50%;
     }
 
-    .dark {
+    :root {
         --background: 180 100% 3%;
         --foreground: 208 0% 92%;
         --primary: 180 100% 90%;
