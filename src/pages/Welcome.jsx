@@ -17,7 +17,7 @@ const Welcome = () => {
     getProject.forEach((_, i) => {
       setTimeout(() => {
         setVisibleIndexes(prev => [...prev, i]);
-      }, i * 150);
+      }, i * 240);
     });
   }, [getProject]);
   return (
@@ -35,7 +35,7 @@ const Welcome = () => {
         onClick={() => setMoreProject(!moreProject)}
         className="h-7 w-27 fixed bottom-45 right-10 flex items-center justify-end group cusor-pointer">
         <div className={`bg-foreground absolute w-25 h-7 rounded-sm transition-all duration-300 group-hover:buttonRound ${moreProject ? "animate-goLeft" : ""}`}></div>
-        <p className={`'font-semibold text-1rem text-background z-1 mr-2.5 group-hover:text-foreground cursor-pointer' ${moreProject ? "animate-goRight" : ""}`}>View More</p>
+        <p className={`'font-semibold text-1rem text-background z-1 mr-2.5 group-hover:text-foreground group-hover:cursor-pointer cursor-pointer' ${moreProject ? "animate-goRight" : ""}`}>View More</p>
       </div>
 
       <div className="h-25 w-screen fixed bottom-0 bg-background z-10"></div>
@@ -49,7 +49,7 @@ const Welcome = () => {
       </div>
       {/* Navbar */}
       <Navbar />
-      <div className='mt-20 mb-10 z-10'>
+      <div className='mt-20 mb-32 z-10'>
         {getProject.map((items, index) => (
           <div key={index} className="flex flex-col items-end mx-4">
             <div className='flex items-center justify-end group'>

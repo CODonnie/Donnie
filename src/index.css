@@ -14,8 +14,8 @@
     --animate-slideout: slideout 0.3s ease-in-out;
     --animate-div-cover: div-cover .5s linear;
 		--animate-div-remove: div-remove .5s linear;
-    --animate-goLeft: goLeft 1s ease-in-out forwards;
-    --animate-goRight: goRight 1s ease-in-out forwards;
+    --animate-goLeft: goLeft 1s;
+    --animate-goRight: goRight 1s;
 }
 
 @keyframes div-cover {
@@ -41,11 +41,13 @@
 }
 
 @keyframes goLeft {
-  0% { transform: translateX(0); opacity: 1; }
+  0%,50% { transform: translateX(0); opacity: 1; animation-timing-function: cubic-bezier(0.8 ,0 ,1 , 1); }
+  30% { transform: translateX(-30px); opacity: 1; }
   100% { transform: translateX(-100px); opacity: 0; }
 }
 @keyframes goRight {
-  0% { transform: translateX(0); opacity: 1; }
+  0%,50% { transform: translateX(0); opacity: 1; }
+  30% { transform: translateX(30px); opacity: 1;}
   100% { transform: translateX(100px); opacity: 0; }
 }
 
@@ -76,7 +78,7 @@
 @keyframes bounceInfinite {
    0% {
     transform: translateY(-100px);
-    animation-timing-function: cubic-bezier(0.8, 0, 1, 1); /* fall */
+    animation-timing-function: cubic-bezier(0.5, 0, 1, 1); /* fall */
   }
   100% {
     transform: translateY(0px);
