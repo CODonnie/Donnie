@@ -15,8 +15,8 @@
     --animate-slideout: slideout 0.3s ease-in-out;
     --animate-div-cover: div-cover .5s linear;
 		--animate-div-remove: div-remove .5s linear;
-    --animate-goLeft: goLeft .6s linear forwards;
-    --animate-goRight: goRight 1s forwards;
+    --animate-goLeft: goLeft .2s linear forwards;
+    --animate-goRight: goRight .3s forwards;
 }
 
 @keyframes div-cover {
@@ -137,7 +137,7 @@
         --muted: 180 10% 50%;
     }
 
-    :root {
+    .dark {
         --background: 180 100% 3%;
         --foreground: 208 0% 92%;
         --primary: 180 100% 90%;
