@@ -11,6 +11,7 @@
     --color-background: hsl(var(--background));
     --animate-bounceTwice: bounceTwice 1s ease-in-out;
     --animate-bounceInfinite: bounceInfinite .5s infinite alternate;
+    --animate-swingfinity: swingfinity 5s infinite alternate;
     --animate-slideout: slideout 0.3s ease-in-out;
     --animate-div-cover: div-cover .5s linear;
 		--animate-div-remove: div-remove .5s linear;
@@ -78,12 +79,39 @@
 }
 @keyframes bounceInfinite {
    0% {
-    transform: translateY(-100px);
-    animation-timing-function: cubic-bezier(0.5, 0, 1, 1); /* fall */
+    transform: translateY(-30px);
+    animation-timing-function: cubic-bezier(0.9, 0, 1, 1); /* fall */
   }
   100% {
     transform: translateY(0px);
-    animation-timing-function: cubic-bezier(0, 0, 0.2, 1); /* up */
+    animation-timing-function: cubic-bezier(0, 0, 1, 1); /* up */
+  }
+}
+
+@keyframes swingfinity {
+   0% {
+    transform: translate(-50px, -50px);
+    animation-timing-function: cubic-bezier(0.9, 0, 1, 1); /* fall */
+  }
+  25% {
+    transform: translate(-45px, -25px);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1); /* up */
+  }
+  35% {
+    transform: translate(-40px, -15px);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1); /* up */
+  }
+  50% {
+    transform: translate(0px, 0px);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1); /* up */
+  }
+  75% {
+    transform: translate(45px, -25px);
+    animation-timing-function: cubic-bezier(0, 0, 1, 1); /* up */
+  }
+  100% {
+    transform: translate(50px, -50px);
+    animation-timing-function: cubic-bezier(0.9, 0, 1, 1); /* fall */
   }
 }
 
@@ -109,7 +137,7 @@
         --muted: 180 10% 50%;
     }
 
-    .dark {
+    :root {
         --background: 180 100% 3%;
         --foreground: 208 0% 92%;
         --primary: 180 100% 90%;
@@ -138,6 +166,9 @@
         font-family: 'Ubuntu Sans', sans-serif;
         @apply text-xl sm:text-2xl md:text-3xl font-semibold leading-normal;
     }
+    button {
+      font-size: 12px;
+    }
 
     *,
     ::before,
@@ -153,7 +184,7 @@
 
     body {
         font-family: 'Ubuntu Sans', sans-serif;
-        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))];
+        @apply bg-[hsl(var(--background))] text-[hsl(var(--foreground))] ;
     }
 }
 
@@ -162,6 +193,17 @@
     margin: 0 auto;
     padding: 0;
 }
+
+@layer utilities {
+  .scrollbar-hide {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .scrollbar-hide::-webkit-scrollbar {
+    display: none; 
+  }
+}
+
 @utility btn {
   @apply px-4 py-2 rounded-lg font-medium bg-[hsl(var(--primary))] text-[hsl(var(--primary-foreground))] hover:bg-[hsl(var(--accent))] transition;
 }
@@ -182,4 +224,13 @@
   left: 1px;
   margin: 0 auto;
   background-color: hsl(var(--foreground));
+}
+
+@utility intro {
+  @media (width <= 1024px) {
+    @apply hidden
+  }
+  @media (width >= 1024px) {
+    @apply grid justify-start items-center
+  }
 }
