@@ -1,0 +1,25 @@
+# Node dependencies
+node_modules/
+
+# Compiled output
+dist/
+
+# Environment variables & local overrides
+.env
+.env.*
+
+# Logs
+logs/
+*.log
+npm-debug.log*
+
+# Editor / IDE settings
+.vscode/
+.idea/
+
+# OS cruft
+.DS_Store
+Thumbs.db
+
+# ts-node cache
+.ts-node/
